@@ -1,15 +1,17 @@
 import { debug } from './../utils/debug';
 import { NotificationsService } from './../notifications.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-subjects',
   templateUrl: './subjects.component.html',
-  styleUrls: ['./subjects.component.scss']
+  styleUrls: ['./subjects.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SubjectsComponent implements OnInit {
 
+  @Input() data;
   private subj = new Subject<number>();
   private bSubj = new BehaviorSubject<number>(0);
   private rSubj = new ReplaySubject<number>(1);
