@@ -1,0 +1,7 @@
+{
+  "configDir": "mocks",
+  "multiRequest": false,
+  "cache": false,
+  "port": 5000,
+  "quiet": false
+}
